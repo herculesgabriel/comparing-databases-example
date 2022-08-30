@@ -18,8 +18,8 @@ const [mongoData, postgresData] = await Promise.all([
 
 console.log(mongoData.length);
 console.log(postgresData.length);
-saveOnDisk(mongoData, './results/mongoData.json');
-saveOnDisk(postgresData, './results/postgresData.json');
+saveOnDisk(mongoData, `./results/dbs/mongo_transactions.json`);
+saveOnDisk(postgresData, `./results/dbs/postgres_transactions.json`);
 
 const result = [];
 
@@ -31,4 +31,13 @@ for (const { id } of postgresData) {
   }
 }
 
-console.log(result);
+const currentDate = new Date().toLocaleString();
+const formattedDate = currentDate
+  .replace('/', '-')
+  .replace('/', '-')
+  .replace(', ', '_')
+  .replace(':', '-')
+  .replace(':', '-')
+  .replace(':', '-')
+  .replace(' ', '_');
+saveOnDisk(result, `./results/${formattedDate}.json`);
