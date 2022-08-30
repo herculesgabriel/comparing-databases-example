@@ -18,6 +18,9 @@ const [mongoData, postgresData] = await Promise.all([
   postgresDataPromise,
 ]);
 
+console.log('Total data from MongoDB:', mongoData.length);
+console.log('Total data from PostgreSQL:', postgresData.length);
+
 console.log('- Saving data to disk...');
 
 saveOnDisk(mongoData, `./results/dbs/mongo_transactions.json`);
