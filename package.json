@@ -1,0 +1,15 @@
+{
+  "name": "databases-script",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "dev": "node ./index.mjs"
+  },
+  "dependencies": {
+    "dotenv": "^16.0.1",
+    "mongodb": "^4.9.0",
+    "pg": "^8.8.0"
+  }
+}
